@@ -1,18 +1,18 @@
-import { checkForName } from './js/nameChecker'
+import { getSentiment, updateUi, interpretResponse, validUrl } from './js/helpers'
 import { handleSubmit } from './js/formHandler'
-import img from './images/file.jpeg'
-import './styles/resets.scss'
-import './styles/base.scss'
+import logo from './images/logo.png'
+import './styles/mvp.scss'
+import './styles/loader.scss'
 import './styles/footer.scss'
-import './styles/form.scss'
 import './styles/header.scss'
+import './styles/results.scss'
 
-console.log(checkForName);
-
-alert("I EXIST")
-console.log("CHANGE!!");
+document.getElementById('logo').src = logo
 
 export {
-    checkForName,
-    handleSubmit
+    getSentiment,
+    handleSubmit,
+    updateUi,
+    interpretResponse,
+    validUrl
 }

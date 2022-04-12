@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>News NLP App</title>
+    <!-- <link rel="stylesheet" href="/styles/mvp.css">
+    <link rel="stylesheet" href="/styles/loader.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/results.css">
+    <link rel="stylesheet" href="/styles/footer.css"> -->
+</head>
 
-        <header>
-            <div class="">
-                Logo
+<body>
+
+    <header>
+        <a href="/"><img id="logo" alt="Logo" height="180"></a>
+        <nav>
+
+            <ul>
+                <li><a href="#">Navigation</a>
+                    <ul>
+                        <li><a href="#form-section">Submit a URL</a></li>
+                        <li><a href="#results-section">Results</a></li>
+                        <li><a href="#bottom">Footer</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="form-section">
+            <form class="" onsubmit="return handleSubmit(event)">
+                <label for="url">Type a URL to have it analyzed</label>
+                <textarea id="url" cols="40" rows="5" type="text" name="input"
+                    placeholder="Enter URL of news article here" required
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"></textarea>
+
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return handleSubmit(event)">
+            </form>
+        </section>
+
+        <section id="results-section">
+            <h2>Sentiment Analysis results:</h2>
+        </section>
+        <section>
+            <div class="loader" style="display: none;"></div>
+        </section>
+
+        <section>
+            <div id="results">
             </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+        </section>
+    </main>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            </section>
+    <footer id="bottom">
+        <hr>
+        <p><small>Created by <a href="https://github.com/gabriel-aleixo" target="new">Gabriel Aleixo</a></small></p>
+    </footer>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+</body>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
-    </body>
 </html>
